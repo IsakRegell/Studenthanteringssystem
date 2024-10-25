@@ -7,9 +7,6 @@
         public int StudentId { get; set; }
         public List<int> Betyg { get; set; }
 
-
-
-
         public Elev(string namn, int födelseår, int studentId)
         {
             Namn = namn;

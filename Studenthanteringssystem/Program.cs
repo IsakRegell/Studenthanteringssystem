@@ -34,6 +34,7 @@
                         
                         break;
                     case "4":
+                        //List<Elev> resultatavmetod = system.VisaAllaEleverMedBetygHögreÄn(50);  //  Andvänds vid return
                         system.VisaAllaEleverMedBetygHögreÄn(50);
                         system.Pausa();
                         break;

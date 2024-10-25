@@ -1,4 +1,6 @@
-﻿namespace Studenthanteringssystem
+﻿using System.Linq.Expressions;
+
+namespace Studenthanteringssystem
 {
     public class Studenthanteringssystem
     {
@@ -8,8 +10,8 @@
         {
             Elev elev1 = new Elev("Isak Regell", 2004, 111);
             Elev elev2 = new Elev("Amanda Frykmer", 2005, 222);
-            elev1.Betyg.Add(50);
-            elev2.Betyg.Add(45);
+            elev1.Betyg.Add(49);
+            elev2.Betyg.Add(89);
             elever.Add(elev1);
             elever.Add(elev2);
         }
@@ -59,13 +61,13 @@
 
         public void RäknautGenomsnittBetyg()
         {
-            
-        }
 
+        }
         public void VisaAllaEleverMedBetygHögreÄn(int minBetyg)
+             //List<Elev> //  Andvänds vid return
         {
             bool hittadElev = false;
-
+            //List<Elev>allaelevmedhögrebetyg = new List<Elev> ();    //  Andvänds vid return
             foreach (var elev in elever)
             {
                 if (elev.Betyg.Any(b => b >= minBetyg))
@@ -74,13 +76,14 @@
                     string betygLista = string.Join(", ", elev.Betyg);
                     Console.WriteLine($"Namn: *{elev.Namn}* Födelseår: *{elev.FödelseÅr}* StudentID: *{elev.StudentId}* ELEVENS BETYG: {betygLista}");
                     hittadElev = true;
+                    //allaelevmedhögrebetyg.Add(elev);      //  Andvänds vid return
                 }
             }
             if (!hittadElev)
             {
                 Console.WriteLine($"Inga elever med betyg högre än eller lika med *{minBetyg}* hittades.");
             }
-
+            //return allaelevmedhögrebetyg;   //  Andvänds vid return
         }
 
         public void VisaAllaElever()
